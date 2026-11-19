@@ -23,10 +23,10 @@ folder are published.
 
 The website uses no cookies, analytics, JavaScript, or third-party requests.
 
-## Planned public URL
+## Public URL
 
-The recommended zero-cost setup is a separate public repository under the same
-GitHub account:
+Published on 2026-11-19 as a separate public repository under the same GitHub
+account:
 
 - Repository: `https://github.com/gakrobert51-cloud/WinCleanAI-legal`
 - Site: `https://gakrobert51-cloud.github.io/WinCleanAI-legal/`
@@ -34,18 +34,29 @@ GitHub account:
 - EULA: `https://gakrobert51-cloud.github.io/WinCleanAI-legal/eula.html`
 
 Internal links are relative, so the pages work under any repository name. If the
-public repository or account name differs, only the absolute URLs entered in
+public repository or account name changes, only the absolute URLs entered in
 Partner Center need to change.
 
-## Publish (one time)
+## Publish (completed 2026-11-19)
 
-Use a directory **outside** the private application repository, so the public
-repository has no Git history or source code from WinCleanAI:
+The public repository was created from a directory **outside** the private
+application repository, so it has no Git history or source code from WinCleanAI.
+The pages, `styles.css`, `README.md` and `.nojekyll` were published on `main`.
+GitHub Pages serves the repository from `main` / root.
+
+Verification:
+
+- all three URLs return HTTP 200 with a valid GitHub Pages certificate;
+- the pages contain `Robert Gak` and `robertgak18@gmail.com`;
+- the pages contain no `gakrobert51@gmail.com`, JavaScript, or external assets.
+
+To recreate the setup from scratch:
 
 ```powershell
 $destination = Join-Path $env:USERPROFILE 'src\WinCleanAI-legal'
 New-Item -ItemType Directory -Path $destination -Force | Out-Null
-Copy-Item -Path 'C:\App5\WinCleanAI\legal-site\*' -Destination $destination -Recurse -Force
+Get-ChildItem -LiteralPath 'C:\App5\WinCleanAI\legal-site' -Force |
+    Copy-Item -Destination $destination -Recurse -Force
 Set-Location $destination
 git init -b main
 git add .
@@ -53,22 +64,15 @@ git commit -m "Publish WinCleanAI privacy policy and EULA"
 gh repo create WinCleanAI-legal --public --source . --remote origin --push
 ```
 
-Then enable GitHub Pages:
-
-1. Open the public repository on GitHub.
-2. **Settings → Pages**.
-3. **Source:** *Deploy from a branch*.
-4. **Branch:** `main`, **Folder:** `/ (root)`.
-5. Save and wait for the deployment to finish.
-6. Open the site and both documents in a private browser window. Confirm HTTP
-   200, valid HTTPS, and that no login is required.
+Then enable **Settings → Pages → Deploy from a branch → `main` / root** and
+wait for the deployment.
 
 GitHub Pages issues a publicly trusted certificate automatically. No domain,
 paid certificate, or additional hosting is required.
 
 ## Partner Center fields
 
-Enter these absolute URLs after GitHub Pages is live:
+Enter these absolute URLs in Partner Center:
 
 | Field | URL |
 |---|---|
