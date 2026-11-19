@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WinCleanAI Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for WinCleanAI: local-only processing, no telemetry, no personal data collection, and no cloud AI.">
+  <meta name="theme-color" content="#0b5cad">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">WinCleanAI <span>Legal</span></a>
+      <nav class="site-nav" aria-label="Legal documents">
+        <a href="privacy.html" aria-current="page">Privacy Policy</a>
+        <a href="eula.html">EULA</a>
+        <a href="mailto:robertgak18@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <article>
+      <h1>WinCleanAI Privacy Policy</h1>
+      <p class="meta">
+        <strong>Effective date:</strong> 18 November 2026<br>
+        <strong>Last updated:</strong> 18 November 2026<br>
+        <strong>Controller:</strong> Robert Gak<br>
+        <strong>Contact:</strong> <a href="mailto:robertgak18@gmail.com">robertgak18@gmail.com</a>
+      </p>
+
+      <h2>1. Scope and summary</h2>
+      <p>
+        WinCleanAI is a Windows 11 cleanup utility distributed through Microsoft Store.
+        It includes the desktop application, the cleanup engine, and the
+        <code>winclean</code> command-line tool (together, the &ldquo;App&rdquo;).
+        This policy explains how Robert Gak (&ldquo;WinCleanAI&rdquo;,
+        &ldquo;we&rdquo;, &ldquo;us&rdquo;) handles information in connection with
+        the App and this website. It does not cover Microsoft&rsquo;s own handling of
+        Store account, installation, update, or crash data; Microsoft&rsquo;s privacy
+        statement applies to those services.
+      </p>
+      <p>WinCleanAI is designed to work entirely on your device:</p>
+      <ul>
+        <li>The App works offline. Scanning, policy decisions, quarantine, restore, audit verification, and cleanup do not require a network connection.</li>
+        <li>We do not collect, receive, store, sell, or share personal data through the App.</li>
+        <li>The App contains no telemetry, analytics, advertising, crash-reporting SDKs, cloud AI, or remote file upload.</li>
+        <li>No account or sign-in is required.</li>
+        <li>Microsoft handles Store downloads, installations, updates, and any Store-related diagnostic data under its own privacy statement.</li>
+      </ul>
+      <p>
+        Because the App does not send us data, there is no server-side WinCleanAI
+        account, profile, or database about you.
+      </p>
+
+      <h2>2. Data processed locally on your device</h2>
+      <p>
+        The App processes the following data locally to perform its functions. It is
+        not transmitted to us or to any third party.
+      </p>
+      <div class="table-scroll" role="region" aria-label="Data processed locally" tabindex="0">
+        <table>
+        <thead>
+          <tr>
+            <th scope="col">Data</th>
+            <th scope="col">Purpose</th>
+            <th scope="col">Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>File metadata: name, path, size, timestamps, attributes, hashes</td>
+            <td>Scan, policy decision, and cleanup preview</td>
+            <td>Your device</td>
+          </tr>
+          <tr>
+            <td>Quarantine payload and metadata</td>
+            <td>Recoverability and verification</td>
+            <td><code>%LOCALAPPDATA%\WinCleanAI\Quarantine</code></td>
+          </tr>
+          <tr>
+            <td>Audit records: actor SID, operation, path, decision, hashes</td>
+            <td>Tamper-evident record of cleanup actions</td>
+            <td><code>%LOCALAPPDATA%\WinCleanAI\Logs</code></td>
+          </tr>
+          <tr>
+            <td>Audit HMAC key</td>
+            <td>Audit integrity verification</td>
+            <td>DPAPI <code>CurrentUser</code>; same directory</td>
+          </tr>
+          <tr>
+            <td>Settings and cleanup-zone configuration</td>
+            <td>App behavior</td>
+            <td>Your device</td>
+          </tr>
+          <tr>
+            <td>Engine log</td>
+            <td>Start-up and connection diagnostics</td>
+            <td><code>%LOCALAPPDATA%\WinCleanAI\Logs\engine.log</code></td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+      <p>
+        The audit log is a local operational record. It can contain personal data such
+        as your Windows user SID and file paths. It stays on your device. In the Store
+        (MSIX) build, the App and engine run as the signed-in standard user, and local
+        data is access-controlled to <code>SYSTEM</code> and the current user.
+      </p>
+      <p>
+        Uninstalling the App intentionally leaves quarantine and audit data in place so
+        that a reinstall can recover it. You can remove the data at any time by deleting
+        <code>%LOCALAPPDATA%\WinCleanAI</code> or by using the App or CLI.
+      </p>
+
+      <h2>3. No telemetry, analytics, or cloud processing</h2>
+      <p>The App does not:</p>
+      <ul>
+        <li>send usage statistics, crash reports, or diagnostic logs to us;</li>
+        <li>use advertising or analytics SDKs;</li>
+        <li>call a cloud AI service;</li>
+        <li>upload file names, paths, hashes, or file content;</li>
+        <li>perform update checks (Microsoft Store delivers updates).</li>
+      </ul>
+      <p>
+        Cleanup decisions are made by a deterministic policy engine on your device. A
+        future version may add optional local analysis features; this policy and the App
+        will be updated before any such feature is enabled.
+      </p>
+
+      <h2>4. Network access</h2>
+      <p>
+        The core features do not require network access. The App may use the network
+        only when you explicitly choose to:
+      </p>
+      <ul>
+        <li>open a <code>mailto:</code> support link, in which case your email client handles the message;</li>
+        <li>open a web link in this policy or the Store listing, in which case your browser handles it.</li>
+      </ul>
+      <p>
+        Microsoft Store itself may use the network to install or update the App and may
+        collect standard installation and crash information under Microsoft&rsquo;s
+        privacy statement.
+      </p>
+
+      <h2>5. Support emails</h2>
+      <p>
+        If you email <a href="mailto:robertgak18@gmail.com">robertgak18@gmail.com</a>,
+        we receive your email address, the content of your message, and any attachments
+        you choose to send. We use this information only to respond to your request,
+        troubleshoot the issue you report, and keep a record of the support case.
+      </p>
+      <ul>
+        <li><strong>Legal basis (EEA/UK):</strong> our legitimate interest in providing support, or your consent where you choose to contact us; legal obligations where applicable.</li>
+        <li><strong>Retention:</strong> until the support case is closed, then up to 30 days, unless a longer period is required by law.</li>
+        <li><strong>Sharing:</strong> email is handled by our email provider, Google (Gmail), under Google&rsquo;s terms and privacy safeguards. We do not sell support emails or use them for advertising.</li>
+        <li><strong>International transfers:</strong> your email provider and ours may process messages outside your country, including in the United States, using the provider&rsquo;s safeguards.</li>
+      </ul>
+      <p>
+        Please do not send file contents, quarantine payloads, passwords, or other
+        sensitive information that is not necessary for your support request. The
+        App&rsquo;s Settings page can generate a short diagnostics text locally; you
+        decide whether to copy it into your email.
+      </p>
+
+      <h2>6. Microsoft Store</h2>
+      <p>
+        WinCleanAI is offered as a free listing. Microsoft processes Store account,
+        purchase, installation, update, and crash data under its own privacy statement.
+        We do not receive payment card details because the App is free. If a paid
+        offering is introduced later, this policy will be updated before it is offered.
+      </p>
+
+      <h2>7. Legal bases and your rights (EEA/UK)</h2>
+      <p>Where the GDPR or UK GDPR applies:</p>
+      <ul>
+        <li>The App&rsquo;s local processing is controlled by you on your device. We do not receive that data.</li>
+        <li>For support emails, we rely on the legal bases described in section 5.</li>
+        <li>You may request access to, correction of, or deletion of your support emails, object to or restrict their processing, or withdraw consent.</li>
+        <li>You may lodge a complaint with your local supervisory authority.</li>
+      </ul>
+      <p>
+        To exercise these rights, contact
+        <a href="mailto:robertgak18@gmail.com">robertgak18@gmail.com</a>. We may need to
+        verify your identity. You can delete local App data directly at any time from
+        <code>%LOCALAPPDATA%\WinCleanAI</code>.
+      </p>
+
+      <h2>8. Retention</h2>
+      <div class="table-scroll" role="region" aria-label="Retention periods" tabindex="0">
+        <table>
+        <thead>
+          <tr>
+            <th scope="col">Data</th>
+            <th scope="col">Retention</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Support emails</td>
+            <td>Until the case is closed, then up to 30 days</td>
+          </tr>
+          <tr>
+            <td>Local audit log</td>
+            <td>30 days by default; daily seals are retained</td>
+          </tr>
+          <tr>
+            <td>Local quarantine</td>
+            <td>30 days or a 10 GiB cap, whichever comes first</td>
+          </tr>
+          <tr>
+            <td>Local engine log</td>
+            <td>Until rotated or deleted by you</td>
+          </tr>
+          <tr>
+            <td>Store records</td>
+            <td>Handled by Microsoft; not applicable to the free listing</td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+
+      <h2>9. Sharing</h2>
+      <p>We do not sell personal data. We share data only:</p>
+      <ul>
+        <li>with Microsoft, for Store distribution, certification, installation, updates, and Store-related reporting under Microsoft&rsquo;s terms;</li>
+        <li>with our email provider, Google, when you contact support;</li>
+        <li>with authorities or professional advisers when required by law or necessary to establish, exercise, or defend legal claims.</li>
+      </ul>
+      <p>
+        We do not share local file metadata, quarantine payloads, or audit records with
+        advertisers, data brokers, or AI providers.
+      </p>
+
+      <h2>10. Security</h2>
+      <p>
+        We use Microsoft Store package signing and distribution, NTFS access controls
+        for local data, DPAPI for the audit key, and TLS for email and this website. The
+        audit log is tamper-evident through a hash chain and HMAC. In standard-user mode,
+        the same Windows user could technically rewrite local files, so the audit log is
+        an operational record rather than a defense against the device owner. No system
+        is perfectly secure. If you discover a vulnerability, contact
+        <a href="mailto:robertgak18@gmail.com">robertgak18@gmail.com</a>.
+      </p>
+
+      <h2>11. Children</h2>
+      <p>
+        WinCleanAI is a professional utility and is not directed to children under 13
+        (or the applicable age of digital consent). We do not knowingly collect
+        children&rsquo;s data.
+      </p>
+
+      <h2>12. Changes</h2>
+      <p>
+        We may update this policy to reflect product or legal changes. We will post the
+        new version on this page and update the effective date. Material changes will be
+        communicated in the App or on the Store listing.
+      </p>
+
+      <h2>13. Contact</h2>
+      <p>
+        Robert Gak<br>
+        <a href="mailto:robertgak18@gmail.com">robertgak18@gmail.com</a>
+      </p>
+      <p class="section-note">
+        Publisher details are also shown on the Microsoft Store listing. This website
+        uses no cookies, analytics, or external resources.
+      </p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; 2026 Robert Gak. All rights reserved.</p>
+      <p><a href="index.html">Legal home</a> &middot; <a href="eula.html">EULA</a></p>
+    </div>
+  </footer>
+</body>
+</html>
